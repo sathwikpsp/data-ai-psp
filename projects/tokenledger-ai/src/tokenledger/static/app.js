@@ -3,7 +3,7 @@ const $ = (id) => document.getElementById(id);
 const money = (n, digits = 2) => n == null ? "—" : new Intl.NumberFormat("en-US", {style:"currency", currency:"USD", minimumFractionDigits:digits, maximumFractionDigits:digits}).format(n);
 const number = (n) => new Intl.NumberFormat("en-US").format(n);
 const staticMode = document.querySelector('meta[name="tokenledger-mode"]').content === "static";
-let token = "", snapshot = null;
+let token = "", snapshot = null, liveTimer = null;
 const headers = () => token ? {"Authorization":"Bearer " + token} : {};
 
 async function load() {
@@ -15,6 +15,10 @@ async function load() {
     if (response.status === 401) { $("auth").hidden = false; throw new Error("Enter your workspace API token to continue."); }
     if (!response.ok) throw new Error("The warehouse could not be reached. Check the service and retry.");
     snapshot = await response.json();
+    if (staticMode) {
+      const saved = sessionStorage.getItem("tokenledger-live");
+      if (saved) snapshot = JSON.parse(saved);
+    }
     $("auth").hidden = true;
     render(snapshot);
   } catch (error) {
@@ -25,7 +29,7 @@ async function load() {
 
 function render(data) {
   const o = data.overview, f = data.forecast;
-  $("mode").textContent = data.rate_card_version.startsWith("demo-") ? "Synthetic demo" : "Usage workspace";
+  $("mode").textContent = staticMode ? "LIVE SIMULATION" : (data.rate_card_version.startsWith("demo-") ? "Synthetic demo" : "Usage workspace");
   $("status").textContent = data.pricing_note + (o.freshness === "stale" ? " · Historical snapshot: data is over 48 hours old." : "");
   $("total").textContent = money(o.cost_usd);
   $("requests").textContent = number(o.requests);
@@ -56,6 +60,35 @@ function render(data) {
   $("forecast-total").textContent = f.status === "ready" ? money(f.projected_usd) + " projected" : "";
   $("budget-forecast").textContent = money(f.projected_usd);
   updateBudget(); drawChart(data);
+  if (staticMode && !liveTimer) liveTimer = setInterval(liveTick, 2500);
+}
+
+function liveTick() {
+  if (!snapshot) return;
+  const teams = snapshot.overview.by_team;
+  const team = teams[Math.floor(Math.random() * teams.length)];
+  const requests = 2 + Math.floor(Math.random() * 7);
+  const spike = Math.random() < 0.035;
+  const cost = requests * (spike ? 0.65 : 0.018 + Math.random() * 0.025);
+  const tokens = requests * Math.floor(1800 + Math.random() * 6000);
+  snapshot.overview.requests += requests;
+  snapshot.overview.tokens += tokens;
+  snapshot.overview.cost_usd += cost;
+  snapshot.overview.cost_microusd += Math.round(cost * 1e6);
+  team.requests += requests; team.cost_usd += cost;
+  const today = new Date().toISOString().slice(0,10);
+  let point = snapshot.daily.at(-1);
+  if (!point || point.day !== today) { point = {day:today,cost_usd:0}; snapshot.daily.push(point); }
+  point.cost_usd += cost;
+  snapshot.generated_at = new Date().toISOString();
+  snapshot.overview.last_event = snapshot.generated_at;
+  snapshot.overview.freshness = "fresh";
+  snapshot.pricing_note = "Live browser telemetry simulation · new usage events every 2.5 seconds";
+  if (spike) {
+    snapshot.anomalies.alerts.unshift({id:"live:"+Date.now(),team:team.team,day:today,cost_usd:cost,baseline_usd:cost/4,excess_usd:cost*0.75,drivers:["request_volume"],severity:"medium"});
+  }
+  sessionStorage.setItem("tokenledger-live", JSON.stringify(snapshot));
+  render(snapshot);
 }
 
 function updateBudget() {
