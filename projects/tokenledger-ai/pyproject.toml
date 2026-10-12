@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokenledger-ai"
+version = "1.0.0"
+description = "Auditable AI cost data pipelines, anomaly detection, and budget forecasting"
+requires-python = ">=3.12,<3.14"
+license = "MIT"
+dependencies = [
+  "duckdb==1.5.6",
+  "fastapi==0.143.0",
+  "uvicorn==0.54.0",
+  "numpy==2.5.4",
+  "scikit-learn==1.9.1",
+  "pydantic==2.14.1",
+  "pytz==2025.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "httpx==0.28.1", "ruff==0.17.0", "build==1.6.1"]
+
+[project.scripts]
+tokenledger = "tokenledger.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tokenledger = ["assets/*", "static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

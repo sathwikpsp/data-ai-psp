@@ -1,0 +1,131 @@
+{
+  "anomaly_detection": {
+    "dataset": "synthetic-demo-seed-17",
+    "scope": "held-out final 14 calendar days",
+    "confusion_matrix": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 40
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "scored_team_days": 42,
+    "limitation": "Two designed incidents; these metrics do not establish real-world accuracy."
+  },
+  "forecast": {
+    "status": "ready",
+    "model": "seasonal_median",
+    "model_version": "1.0.0",
+    "as_of": "2026-10-11",
+    "training_days": 84,
+    "selection_mae_usd": {
+      "seasonal_median": 0.030953,
+      "ridge_calendar": 0.141255
+    },
+    "backtest": {
+      "start": "2026-09-28",
+      "end": "2026-10-11",
+      "selected": {
+        "mae_usd": 1.27473,
+        "wape": 0.402438
+      },
+      "seasonal_baseline": {
+        "mae_usd": 1.27473,
+        "wape": 0.402438
+      },
+      "interval_coverage": 0.785714,
+      "calibration_days": 7,
+      "calibration_end": "2026-09-27"
+    },
+    "interval_note": "Empirical 90th-percentile absolute-error band from 7 calibration days; not a guaranteed 90% interval and not calibrated for long horizons.",
+    "points": [
+      {
+        "day": "2026-10-12",
+        "predicted_usd": 2.082211,
+        "lower_usd": 2.012595,
+        "upper_usd": 2.151827
+      },
+      {
+        "day": "2026-10-13",
+        "predicted_usd": 2.058687,
+        "lower_usd": 1.989071,
+        "upper_usd": 2.128303
+      },
+      {
+        "day": "2026-10-14",
+        "predicted_usd": 2.051228,
+        "lower_usd": 1.981612,
+        "upper_usd": 2.120844
+      },
+      {
+        "day": "2026-10-15",
+        "predicted_usd": 2.08668,
+        "lower_usd": 2.017065,
+        "upper_usd": 2.156296
+      },
+      {
+        "day": "2026-10-16",
+        "predicted_usd": 2.096547,
+        "lower_usd": 2.026932,
+        "upper_usd": 2.166163
+      },
+      {
+        "day": "2026-10-17",
+        "predicted_usd": 1.516633,
+        "lower_usd": 1.447018,
+        "upper_usd": 1.586249
+      },
+      {
+        "day": "2026-10-18",
+        "predicted_usd": 1.511039,
+        "lower_usd": 1.441423,
+        "upper_usd": 1.580654
+      },
+      {
+        "day": "2026-10-19",
+        "predicted_usd": 2.082211,
+        "lower_usd": 2.012595,
+        "upper_usd": 2.151827
+      },
+      {
+        "day": "2026-10-20",
+        "predicted_usd": 2.058687,
+        "lower_usd": 1.989071,
+        "upper_usd": 2.128303
+      },
+      {
+        "day": "2026-10-21",
+        "predicted_usd": 2.051228,
+        "lower_usd": 1.981612,
+        "upper_usd": 2.120844
+      },
+      {
+        "day": "2026-10-22",
+        "predicted_usd": 2.08668,
+        "lower_usd": 2.017065,
+        "upper_usd": 2.156296
+      },
+      {
+        "day": "2026-10-23",
+        "predicted_usd": 2.096547,
+        "lower_usd": 2.026932,
+        "upper_usd": 2.166163
+      },
+      {
+        "day": "2026-10-24",
+        "predicted_usd": 1.516633,
+        "lower_usd": 1.447018,
+        "upper_usd": 1.586249
+      },
+      {
+        "day": "2026-10-25",
+        "predicted_usd": 1.511039,
+        "lower_usd": 1.441423,
+        "upper_usd": 1.580654
+      }
+    ],
+    "projected_usd": 26.806051
+  },
+  "dataset_fingerprint": "3b9f05bdf3f77ac998f5ced33fd2cf35ea25b34450cb4868bb37a6486b66dcc9"
+}

@@ -1,0 +1,9 @@
+{
+  "version": "demo-2026-10-v1",
+  "description": "Illustrative synthetic prices, not vendor quotes. Replace for real usage.",
+  "rates": [
+    {"provider":"demo-cloud","model":"swift-small","currency":"USD","valid_from":"2020-01-01T00:00:00Z","valid_to":"2030-01-01T00:00:00Z","input":"0.40","cached_input":"0.10","output":"1.60"},
+    {"provider":"demo-lab","model":"reasoner-pro","currency":"USD","valid_from":"2020-01-01T00:00:00Z","valid_to":"2030-01-01T00:00:00Z","input":"3.00","cached_input":"0.30","output":"15.00"},
+    {"provider":"demo-cloud","model":"embed-lite","currency":"USD","valid_from":"2020-01-01T00:00:00Z","valid_to":"2030-01-01T00:00:00Z","input":"0.10","cached_input":"0.02","output":"0.00"}
+  ]
+}

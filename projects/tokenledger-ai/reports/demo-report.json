@@ -1,0 +1,584 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-12T09:41:23.894046+00:00",
+  "dataset_fingerprint": "3b9f05bdf3f77ac998f5ced33fd2cf35ea25b34450cb4868bb37a6486b66dcc9",
+  "rate_card_version": "demo-2026-10-v1",
+  "pricing_note": "Illustrative synthetic prices, not vendor quotes. Replace for real usage.",
+  "overview": {
+    "requests": 5424,
+    "cost_microusd": 175491227,
+    "tokens": 157464742,
+    "first_event": "2026-07-20 08:02:00+00:00",
+    "last_event": "2026-10-11 21:38:00+00:00",
+    "teams": 3,
+    "successes": 5298,
+    "cost_usd": 175.491227,
+    "cost_per_success_usd": 0.033124051906379764,
+    "data_lag_hours": 12.056569567222223,
+    "freshness": "fresh",
+    "by_team": [
+      {
+        "team": "research",
+        "cost_usd": 129.517331,
+        "requests": 1392,
+        "cache_ratio": 0.3628538257314059,
+        "error_rate": 0.020114942528735632
+      },
+      {
+        "team": "support",
+        "cost_usd": 27.789325,
+        "requests": 2328,
+        "cache_ratio": 0.3637194630689533,
+        "error_rate": 0.02663230240549828
+      },
+      {
+        "team": "platform",
+        "cost_usd": 18.184571,
+        "requests": 1704,
+        "cache_ratio": 0.39913598138255674,
+        "error_rate": 0.02112676056338028
+      }
+    ],
+    "by_model": [
+      {
+        "provider": "demo-lab",
+        "model": "reasoner-pro",
+        "cost_usd": 129.517331,
+        "requests": 1392
+      },
+      {
+        "provider": "demo-cloud",
+        "model": "swift-small",
+        "cost_usd": 45.973896,
+        "requests": 4032
+      }
+    ],
+    "quality": {
+      "accepted": 5424,
+      "duplicates": 0,
+      "rejected": 0
+    }
+  },
+  "daily": [
+    {
+      "day": "2026-07-20",
+      "cost_usd": 1.981662
+    },
+    {
+      "day": "2026-07-21",
+      "cost_usd": 1.990845
+    },
+    {
+      "day": "2026-07-22",
+      "cost_usd": 1.99989
+    },
+    {
+      "day": "2026-07-23",
+      "cost_usd": 1.997199
+    },
+    {
+      "day": "2026-07-24",
+      "cost_usd": 2.023727
+    },
+    {
+      "day": "2026-07-25",
+      "cost_usd": 1.440647
+    },
+    {
+      "day": "2026-07-26",
+      "cost_usd": 1.423589
+    },
+    {
+      "day": "2026-07-27",
+      "cost_usd": 2.009787
+    },
+    {
+      "day": "2026-07-28",
+      "cost_usd": 2.014691
+    },
+    {
+      "day": "2026-07-29",
+      "cost_usd": 1.987302
+    },
+    {
+      "day": "2026-07-30",
+      "cost_usd": 1.999436
+    },
+    {
+      "day": "2026-07-31",
+      "cost_usd": 2.041197
+    },
+    {
+      "day": "2026-08-01",
+      "cost_usd": 1.420356
+    },
+    {
+      "day": "2026-08-02",
+      "cost_usd": 1.503102
+    },
+    {
+      "day": "2026-08-03",
+      "cost_usd": 1.989435
+    },
+    {
+      "day": "2026-08-04",
+      "cost_usd": 1.980904
+    },
+    {
+      "day": "2026-08-05",
+      "cost_usd": 2.01668
+    },
+    {
+      "day": "2026-08-06",
+      "cost_usd": 2.017899
+    },
+    {
+      "day": "2026-08-07",
+      "cost_usd": 2.028653
+    },
+    {
+      "day": "2026-08-08",
+      "cost_usd": 1.454616
+    },
+    {
+      "day": "2026-08-09",
+      "cost_usd": 1.45532
+    },
+    {
+      "day": "2026-08-10",
+      "cost_usd": 1.973794
+    },
+    {
+      "day": "2026-08-11",
+      "cost_usd": 2.002587
+    },
+    {
+      "day": "2026-08-12",
+      "cost_usd": 2.026994
+    },
+    {
+      "day": "2026-08-13",
+      "cost_usd": 2.002964
+    },
+    {
+      "day": "2026-08-14",
+      "cost_usd": 2.008981
+    },
+    {
+      "day": "2026-08-15",
+      "cost_usd": 1.480014
+    },
+    {
+      "day": "2026-08-16",
+      "cost_usd": 1.502446
+    },
+    {
+      "day": "2026-08-17",
+      "cost_usd": 2.006844
+    },
+    {
+      "day": "2026-08-18",
+      "cost_usd": 2.034801
+    },
+    {
+      "day": "2026-08-19",
+      "cost_usd": 2.031133
+    },
+    {
+      "day": "2026-08-20",
+      "cost_usd": 2.001943
+    },
+    {
+      "day": "2026-08-21",
+      "cost_usd": 2.005754
+    },
+    {
+      "day": "2026-08-22",
+      "cost_usd": 1.438968
+    },
+    {
+      "day": "2026-08-23",
+      "cost_usd": 1.487115
+    },
+    {
+      "day": "2026-08-24",
+      "cost_usd": 2.037522
+    },
+    {
+      "day": "2026-08-25",
+      "cost_usd": 2.045131
+    },
+    {
+      "day": "2026-08-26",
+      "cost_usd": 2.077235
+    },
+    {
+      "day": "2026-08-27",
+      "cost_usd": 2.035861
+    },
+    {
+      "day": "2026-08-28",
+      "cost_usd": 2.065351
+    },
+    {
+      "day": "2026-08-29",
+      "cost_usd": 1.458858
+    },
+    {
+      "day": "2026-08-30",
+      "cost_usd": 1.487949
+    },
+    {
+      "day": "2026-08-31",
+      "cost_usd": 2.067724
+    },
+    {
+      "day": "2026-09-01",
+      "cost_usd": 2.05508
+    },
+    {
+      "day": "2026-09-02",
+      "cost_usd": 2.078787
+    },
+    {
+      "day": "2026-09-03",
+      "cost_usd": 2.034066
+    },
+    {
+      "day": "2026-09-04",
+      "cost_usd": 2.046263
+    },
+    {
+      "day": "2026-09-05",
+      "cost_usd": 1.511876
+    },
+    {
+      "day": "2026-09-06",
+      "cost_usd": 1.487377
+    },
+    {
+      "day": "2026-09-07",
+      "cost_usd": 2.048139
+    },
+    {
+      "day": "2026-09-08",
+      "cost_usd": 2.016208
+    },
+    {
+      "day": "2026-09-09",
+      "cost_usd": 2.047327
+    },
+    {
+      "day": "2026-09-10",
+      "cost_usd": 2.062953
+    },
+    {
+      "day": "2026-09-11",
+      "cost_usd": 2.079113
+    },
+    {
+      "day": "2026-09-12",
+      "cost_usd": 1.494738
+    },
+    {
+      "day": "2026-09-13",
+      "cost_usd": 1.490738
+    },
+    {
+      "day": "2026-09-14",
+      "cost_usd": 2.095291
+    },
+    {
+      "day": "2026-09-15",
+      "cost_usd": 2.066755
+    },
+    {
+      "day": "2026-09-16",
+      "cost_usd": 2.032123
+    },
+    {
+      "day": "2026-09-17",
+      "cost_usd": 2.013375
+    },
+    {
+      "day": "2026-09-18",
+      "cost_usd": 2.090224
+    },
+    {
+      "day": "2026-09-19",
+      "cost_usd": 1.516483
+    },
+    {
+      "day": "2026-09-20",
+      "cost_usd": 1.499238
+    },
+    {
+      "day": "2026-09-21",
+      "cost_usd": 2.024991
+    },
+    {
+      "day": "2026-09-22",
+      "cost_usd": 2.039378
+    },
+    {
+      "day": "2026-09-23",
+      "cost_usd": 2.034598
+    },
+    {
+      "day": "2026-09-24",
+      "cost_usd": 2.104579
+    },
+    {
+      "day": "2026-09-25",
+      "cost_usd": 2.078922
+    },
+    {
+      "day": "2026-09-26",
+      "cost_usd": 1.554575
+    },
+    {
+      "day": "2026-09-27",
+      "cost_usd": 1.485816
+    },
+    {
+      "day": "2026-09-28",
+      "cost_usd": 2.08913
+    },
+    {
+      "day": "2026-09-29",
+      "cost_usd": 2.050619
+    },
+    {
+      "day": "2026-09-30",
+      "cost_usd": 2.067858
+    },
+    {
+      "day": "2026-10-01",
+      "cost_usd": 2.068781
+    },
+    {
+      "day": "2026-10-02",
+      "cost_usd": 2.102871
+    },
+    {
+      "day": "2026-10-03",
+      "cost_usd": 1.486838
+    },
+    {
+      "day": "2026-10-04",
+      "cost_usd": 1.522839
+    },
+    {
+      "day": "2026-10-05",
+      "cost_usd": 2.075292
+    },
+    {
+      "day": "2026-10-06",
+      "cost_usd": 5.019739
+    },
+    {
+      "day": "2026-10-07",
+      "cost_usd": 2.078231
+    },
+    {
+      "day": "2026-10-08",
+      "cost_usd": 2.137058
+    },
+    {
+      "day": "2026-10-09",
+      "cost_usd": 16.599917
+    },
+    {
+      "day": "2026-10-10",
+      "cost_usd": 1.516784
+    },
+    {
+      "day": "2026-10-11",
+      "cost_usd": 1.529351
+    }
+  ],
+  "anomalies": {
+    "status": "ready",
+    "alerts": [
+      {
+        "id": "anomaly:research:2026-10-09",
+        "team": "research",
+        "day": "2026-10-09",
+        "cost_usd": 16.03433,
+        "baseline_usd": 1.491056,
+        "excess_usd": 14.543274,
+        "is_anomaly": true,
+        "isolation_score": -0.119596,
+        "robust_z": 195.073,
+        "drivers": [
+          "tokens_per_request",
+          "error_rate"
+        ],
+        "severity": "high"
+      },
+      {
+        "id": "anomaly:support:2026-10-06",
+        "team": "support",
+        "day": "2026-10-06",
+        "cost_usd": 3.297363,
+        "baseline_usd": 0.315468,
+        "excess_usd": 2.981895,
+        "is_anomaly": true,
+        "isolation_score": -0.128388,
+        "robust_z": 189.046,
+        "drivers": [
+          "tokens_per_request",
+          "error_rate"
+        ],
+        "severity": "high"
+      }
+    ],
+    "models": [
+      {
+        "team": "platform",
+        "status": "ready",
+        "train_start": "2026-07-20",
+        "train_end": "2026-09-27",
+        "training_days": 70
+      },
+      {
+        "team": "research",
+        "status": "ready",
+        "train_start": "2026-07-20",
+        "train_end": "2026-09-27",
+        "training_days": 70
+      },
+      {
+        "team": "support",
+        "status": "ready",
+        "train_start": "2026-07-20",
+        "train_end": "2026-09-27",
+        "training_days": 70
+      }
+    ],
+    "model_version": "1.0.0",
+    "scoring_start": "2026-09-28",
+    "as_of": "2026-10-11"
+  },
+  "forecast": {
+    "status": "ready",
+    "model": "seasonal_median",
+    "model_version": "1.0.0",
+    "as_of": "2026-10-11",
+    "training_days": 84,
+    "selection_mae_usd": {
+      "seasonal_median": 0.030953,
+      "ridge_calendar": 0.141255
+    },
+    "backtest": {
+      "start": "2026-09-28",
+      "end": "2026-10-11",
+      "selected": {
+        "mae_usd": 1.27473,
+        "wape": 0.402438
+      },
+      "seasonal_baseline": {
+        "mae_usd": 1.27473,
+        "wape": 0.402438
+      },
+      "interval_coverage": 0.785714,
+      "calibration_days": 7,
+      "calibration_end": "2026-09-27"
+    },
+    "interval_note": "Empirical 90th-percentile absolute-error band from 7 calibration days; not a guaranteed 90% interval and not calibrated for long horizons.",
+    "points": [
+      {
+        "day": "2026-10-12",
+        "predicted_usd": 2.082211,
+        "lower_usd": 2.012595,
+        "upper_usd": 2.151827
+      },
+      {
+        "day": "2026-10-13",
+        "predicted_usd": 2.058687,
+        "lower_usd": 1.989071,
+        "upper_usd": 2.128303
+      },
+      {
+        "day": "2026-10-14",
+        "predicted_usd": 2.051228,
+        "lower_usd": 1.981612,
+        "upper_usd": 2.120844
+      },
+      {
+        "day": "2026-10-15",
+        "predicted_usd": 2.08668,
+        "lower_usd": 2.017065,
+        "upper_usd": 2.156296
+      },
+      {
+        "day": "2026-10-16",
+        "predicted_usd": 2.096547,
+        "lower_usd": 2.026932,
+        "upper_usd": 2.166163
+      },
+      {
+        "day": "2026-10-17",
+        "predicted_usd": 1.516633,
+        "lower_usd": 1.447018,
+        "upper_usd": 1.586249
+      },
+      {
+        "day": "2026-10-18",
+        "predicted_usd": 1.511039,
+        "lower_usd": 1.441423,
+        "upper_usd": 1.580654
+      },
+      {
+        "day": "2026-10-19",
+        "predicted_usd": 2.082211,
+        "lower_usd": 2.012595,
+        "upper_usd": 2.151827
+      },
+      {
+        "day": "2026-10-20",
+        "predicted_usd": 2.058687,
+        "lower_usd": 1.989071,
+        "upper_usd": 2.128303
+      },
+      {
+        "day": "2026-10-21",
+        "predicted_usd": 2.051228,
+        "lower_usd": 1.981612,
+        "upper_usd": 2.120844
+      },
+      {
+        "day": "2026-10-22",
+        "predicted_usd": 2.08668,
+        "lower_usd": 2.017065,
+        "upper_usd": 2.156296
+      },
+      {
+        "day": "2026-10-23",
+        "predicted_usd": 2.096547,
+        "lower_usd": 2.026932,
+        "upper_usd": 2.166163
+      },
+      {
+        "day": "2026-10-24",
+        "predicted_usd": 1.516633,
+        "lower_usd": 1.447018,
+        "upper_usd": 1.586249
+      },
+      {
+        "day": "2026-10-25",
+        "predicted_usd": 1.511039,
+        "lower_usd": 1.441423,
+        "upper_usd": 1.580654
+      }
+    ],
+    "projected_usd": 26.806051
+  },
+  "budget": {
+    "horizon_days": 14,
+    "budget_usd": 100,
+    "projected_usd": 26.806051,
+    "at_risk": false
+  },
+  "mode": "static-demo"
+}

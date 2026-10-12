@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="tokenledger-mode" content="live">
+  <title>TokenLedger AI · Usage intelligence</title>
+  <link rel="stylesheet" href="./static/style.css">
+  <script defer src="./static/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="logo">T</span><span>TokenLedger<span class="brand-ai">AI / FINOPS</span></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav aria-label="Dashboard sections">
+      <a class="selected" href="#overview"><span>◈</span> Overview</a>
+      <a href="#intelligence"><span>◎</span> Cost intelligence</a>
+      <a href="#allocation"><span>▥</span> Team allocation</a>
+      <a href="#assistant"><span>✳</span> Evidence assistant</a>
+    </nav>
+    <div class="sidebar-note"><span class="dot"></span> Your data. Your evidence.<p>Auditable costs from event to insight.</p></div>
+    <a class="source-link" href="https://github.com/sathwikpsp/data-ai-psp/tree/main/projects/tokenledger-ai" target="_blank" rel="noreferrer">View project on GitHub ↗</a>
+  </aside>
+  <main id="overview">
+    <header><div class="breadcrumb">Workspace <span>/</span> AI usage</div><div class="header-right"><span id="mode" class="pill">Loading</span><span class="avatar">PSP</span></div></header>
+    <div class="page-title"><div><div class="eyebrow">MEASURE WHAT MATTERS</div><h1>Every token tells a story.</h1><p>Understand your AI spend. Find the exceptions. Plan what comes next.</p></div><button id="refresh" class="button">↻ Refresh data</button></div>
+    <div id="auth" class="auth-panel" hidden><label for="token">This workspace requires an API token.</label><input id="token" type="password" autocomplete="off" placeholder="Bearer token"><button id="unlock" class="button">Unlock</button><small>The token stays in memory for this tab.</small></div>
+    <div id="status" class="status" role="status" aria-live="polite">Loading warehouse snapshot…</div>
+    <section class="metrics" aria-label="Key usage metrics">
+      <article class="metric"><div>Total AI spend <span>↗</span></div><strong id="total">—</strong><small id="window">Observed usage window</small></article>
+      <article class="metric"><div>Processed requests <span>⌁</span></div><strong id="requests">—</strong><small id="tokens">Metadata only · no prompts stored</small></article>
+      <article class="metric"><div>Cost per success <span>◉</span></div><strong id="unit-cost">—</strong><small>All request costs / successful requests</small></article>
+      <article class="metric accent"><div>Cost spikes detected <span>✳</span></div><strong id="alerts-count">—</strong><small>Last 14 complete days · materiality gated</small></article>
+    </section>
+    <section id="intelligence" class="intelligence-grid">
+      <article class="panel chart-panel"><div class="panel-heading"><div><div class="eyebrow">SPEND EXPLORER</div><h2>A clearer view of consumption</h2></div><span class="pill muted">USD / day</span></div><div class="legend"><span class="legend-line"></span> Actual spend <span class="legend-line future"></span> 14-day forecast</div><div id="chart" class="chart" role="img" aria-label="Daily usage cost and forecast"></div><div class="chart-footer"><span id="model-name">Chronological forecasting</span><span id="forecast-total">—</span></div></article>
+      <article class="panel signal-panel"><div class="eyebrow">SIGNAL, WITH CONTEXT</div><h2>Investigate the unusual.</h2><p>Spending changes scored against each team's own historical behavior.</p><div id="alerts" class="alerts"></div><div class="subtle-note">Signals identify associations. Validate the cause before taking action.</div></article>
+    </section>
+    <section id="allocation" class="allocation-grid">
+      <article class="panel"><div class="panel-heading"><div><div class="eyebrow">ACCOUNTABILITY</div><h2>Where the spend lands</h2></div><span id="team-count" class="pill muted">Teams</span></div><div class="table-wrap"><table><thead><tr><th>Team</th><th>Spend</th><th>Share</th><th>Cache share</th><th>Error rate</th></tr></thead><tbody id="teams"></tbody></table></div></article>
+      <article class="panel budget-panel"><div class="eyebrow">PLAN AHEAD</div><h2>Your next 14 days</h2><strong id="budget-forecast">—</strong><p>Projected from the latest complete day</p><label for="budget">Scenario budget (USD)</label><input id="budget" type="number" min="1" max="1000000000" value="100" step="10"><div id="budget-status" class="budget-status">Waiting for forecast</div><small>Scenario only. No billing changes or spending limits are applied.</small></article>
+    </section>
+    <section id="assistant" class="panel assistant-panel"><div class="assistant-intro"><div class="eyebrow">EVIDENCE ASSISTANT</div><h2>Ask the numbers.</h2><p>Constrained, traceable answers from this snapshot. No external model or API key required.</p></div><div class="assistant-content"><div class="suggestions"><button data-question="Why did costs spike?">Why did costs spike?</button><button data-question="Which team spends the most?">Who spends the most?</button><button data-question="What is the next forecast?">What's next?</button></div><form id="ask-form"><label class="sr-only" for="question">Question about the data</label><input id="question" maxlength="500" minlength="3" placeholder="Ask about costs, spikes, forecasts, or optimization…" required><button class="button dark" type="submit">Ask ↗</button></form><div id="answer" class="answer" aria-live="polite">Select a question to explore the evidence.</div><details id="evidence-details" hidden><summary>Inspect supporting evidence</summary><pre id="evidence"></pre></details></div></section>
+    <footer><span id="lineage">Snapshot lineage loading…</span><span>TokenLedger AI · v1.0</span></footer>
+  </main>
+</body>
+</html>
